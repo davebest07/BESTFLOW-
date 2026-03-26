@@ -79,12 +79,14 @@ export default function AvailabilityForm({ userId }: AvailabilityFormProps) {
     background: "var(--input-bg)",
     border: "1px solid var(--input-border)",
     borderRadius: 10,
-    padding: ".5rem .75rem",
-    fontSize: ".88rem",
+    padding: ".5rem .5rem",
+    fontSize: ".85rem",
     color: "var(--foreground)",
     outline: "none",
     cursor: "pointer",
-    minWidth: 100,
+    flex: 1,
+    minWidth: 0,
+    maxWidth: 110,
   };
 
   const globalBufferBefore = slots[0]?.bufferBefore ?? 0;
@@ -195,12 +197,12 @@ export default function AvailabilityForm({ userId }: AvailabilityFormProps) {
             </button>
 
             {/* Day name */}
-            <span style={{ width: 100, fontSize: ".9rem", fontWeight: 700, color: active ? "var(--foreground)" : "var(--foreground-muted)", flexShrink: 0, letterSpacing: "-.01em" }}>
+            <span style={{ width: 90, minWidth: 70, fontSize: ".88rem", fontWeight: 700, color: active ? "var(--foreground)" : "var(--foreground-muted)", flexShrink: 0, letterSpacing: "-.01em" }}>
               {DAYS_OF_WEEK[slot.dayOfWeek]}
             </span>
 
             {active ? (
-              <div style={{ display: "flex", alignItems: "center", gap: ".75rem", flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: ".5rem", flex: 1, minWidth: 0 }}>
                 <select value={slot.startTime} onChange={(e) => updateSlot(idx, { startTime: e.target.value })} style={selectStyle}>
                   {timeOptions.map((t) => <option key={t} value={t}>{t}</option>)}
                 </select>

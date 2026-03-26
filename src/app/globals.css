@@ -701,6 +701,14 @@ h6 {
   border-radius: 99px;
 }
 
+/* ── Availability row mobile fix ── */
+@media (max-width: 480px) {
+  .avail-row {
+    gap: .5rem !important;
+    padding: .75rem !important;
+  }
+}
+
 /* ── Dashboard layout: row on desktop, column on mobile ── */
 @media (min-width: 768px) {
   .dashboard-root {
