@@ -1,9 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Calendar,
   CalendarCheck2,
   Clock,
+  Code2,
+  ExternalLink,
   Globe,
   Layers,
   Lock,
@@ -50,7 +53,7 @@ export default async function Home() {
         >
           {/* Logo */}
           <Link
-            href="/about"
+            href="#about"
             style={{
               display: "flex",
               alignItems: "center",
@@ -1087,6 +1090,126 @@ export default async function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/*  ABOUT THE CREATOR                                               */}
+      {/* ================================================================ */}
+      <section
+        id="about"
+        style={{
+          position: "relative",
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          padding: "7rem 2rem",
+        }}
+      >
+        {/* Background photo */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+          }}
+        >
+          <Image
+            src="/david-bg.png"
+            alt="David Soboma Bestman"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center top" }}
+            priority={false}
+          />
+          {/* Dark overlay */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to bottom, rgba(9,9,11,.55) 0%, rgba(9,9,11,.75) 50%, rgba(9,9,11,.95) 100%)",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div style={{ position: "relative", zIndex: 10, maxWidth: 620, width: "100%", textAlign: "center" }}>
+
+          {/* Avatar */}
+          <div style={{ width: 80, height: 80, borderRadius: "50%", background: "linear-gradient(135deg, #7c3aed, #9333ea)", display: "grid", placeItems: "center", margin: "0 auto 2rem", border: "2px solid rgba(139,92,246,.4)", boxShadow: "0 0 40px rgba(124,58,237,.35)" }}>
+            <span style={{ fontSize: "1.75rem", fontWeight: 800, color: "#fff" }}>D</span>
+          </div>
+
+          {/* Badge */}
+          <div style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", padding: ".3rem 1rem", borderRadius: 999, background: "rgba(139,92,246,.15)", border: "1px solid rgba(139,92,246,.35)", fontSize: ".75rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#c4b5fd", marginBottom: "1.5rem" }}>
+            <Zap size={11} /> About the Creator
+          </div>
+
+          {/* Heading */}
+          <h2 style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, letterSpacing: "-.045em", lineHeight: 1.1, marginBottom: "1.5rem", color: "#fff" }}>
+            Built by{" "}
+            <span style={{ background: "linear-gradient(135deg, #a78bfa, #e879f9, #67e8f9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              David Soboma Bestman
+            </span>
+          </h2>
+
+          {/* Bio */}
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(255,255,255,.7)", maxWidth: 560, margin: "0 auto 1.25rem" }}>
+            David is an aspiring software engineer and Information Technology student with a passion for building clean, functional, and user focused products. He enjoys turning ideas into real tools that people can actually use, focusing on simplicity, efficiency, and thoughtful design.
+          </p>
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "rgba(255,255,255,.7)", maxWidth: 560, margin: "0 auto 1.25rem" }}>
+            BestFlow was created to solve the frustrating back and forth of scheduling, transforming it into a seamless, modern experience that respects everyone&apos;s time. The goal is simple: remove unnecessary friction and make coordination feel effortless.
+          </p>
+          <p style={{ fontSize: ".95rem", lineHeight: 1.75, color: "rgba(255,255,255,.45)", maxWidth: 520, margin: "0 auto 2.5rem" }}>
+            Driven by curiosity and a constant desire to improve, David is always learning, experimenting, and building solutions that make everyday interactions smoother and more intuitive.
+          </p>
+
+          {/* Tech stack pills */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: ".6rem", justifyContent: "center", marginBottom: "2.5rem" }}>
+            {["Next.js", "React", "Firebase", "Kinde Auth", "TailwindCSS", "TypeScript"].map((tech) => (
+              <span key={tech} style={{ padding: ".3rem .85rem", borderRadius: 999, background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)", fontSize: ".78rem", fontWeight: 600, color: "rgba(255,255,255,.6)" }}>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1rem", marginBottom: "2.5rem" }}>
+            {[
+              { icon: Code2, value: "1", label: "Product shipped" },
+              { icon: Zap, value: "100%", label: "Passion driven" },
+              { icon: Users, value: "∞", label: "Meetings enabled" },
+            ].map((s) => (
+              <div key={s.label} style={{ borderRadius: 16, border: "1px solid rgba(255,255,255,.1)", background: "rgba(255,255,255,.05)", backdropFilter: "blur(10px)", padding: "1.25rem 1rem" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(139,92,246,.2)", border: "1px solid rgba(139,92,246,.3)", display: "grid", placeItems: "center", margin: "0 auto .85rem" }}>
+                  <s.icon size={16} color="#c4b5fd" />
+                </div>
+                <p style={{ fontSize: "1.5rem", fontWeight: 800, letterSpacing: "-.04em", color: "#fff" }}>{s.value}</p>
+                <p style={{ fontSize: ".72rem", color: "rgba(255,255,255,.35)", marginTop: ".2rem" }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA buttons */}
+          <div style={{ display: "flex", gap: ".85rem", justifyContent: "center", flexWrap: "wrap" }}>
+            <a
+              href="https://github.com/davebest07"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", padding: ".75rem 1.75rem", border: "1px solid rgba(255,255,255,.15)", background: "rgba(255,255,255,.07)", backdropFilter: "blur(10px)", color: "rgba(255,255,255,.7)", borderRadius: 11, fontWeight: 600, fontSize: ".9rem" }}
+            >
+              <ExternalLink size={16} /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/davidbestman/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: ".5rem", padding: ".75rem 1.75rem", border: "1px solid rgba(255,255,255,.15)", background: "rgba(255,255,255,.07)", backdropFilter: "blur(10px)", color: "rgba(255,255,255,.7)", borderRadius: 11, fontWeight: 600, fontSize: ".9rem" }}
+            >
+              <ExternalLink size={16} /> LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 
