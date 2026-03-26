@@ -14,15 +14,18 @@ export default function DashboardLayout({
         background: "var(--background)",
         color: "var(--foreground)",
         display: "flex",
+        flexDirection: "column",
       }}
+      className="dashboard-root"
     >
       <Sidebar />
       <main
         style={{
           flex: 1,
-          padding: "2.5rem",
+          padding: "1.5rem",
           overflowY: "auto",
           maxWidth: "100%",
+          width: "100%",
         }}
       >
         <div style={{ maxWidth: 900, margin: "0 auto" }}>{children}</div>
