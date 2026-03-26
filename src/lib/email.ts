@@ -1,8 +1,13 @@
 import { Resend } from "resend";
 import { formatTime } from "./utils";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const FROM = process.env.RESEND_FROM_EMAIL ?? "Bestflow <onboarding@resend.dev>";
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
+
+function getFrom() {
+  return process.env.RESEND_FROM_EMAIL ?? "Bestflow <onboarding@resend.dev>";
+}
 
 interface BookingEmailParams {
   attendeeName: string;
@@ -54,8 +59,8 @@ export async function sendReminderEmail(params: BookingEmailParams & { hoursUnti
     </body></html>
   `;
 
-  await resend.emails.send({
-    from: FROM,
+  await getResend().emails.send({
+    from: getFrom(),
     to: attendeeEmail,
     subject: `Reminder: "${eventTitle}" with ${hostName} in ${timeLabel}`,
     html,
@@ -108,6 +113,9 @@ export async function sendBookingConfirmationEmails(params: BookingEmailParams) 
     </body>
     </html>
   `;
+
+  const resend = getResend();
+  const FROM = getFrom();
 
   // Send to attendee
   await resend.emails.send({
