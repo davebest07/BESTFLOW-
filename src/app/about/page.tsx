@@ -81,11 +81,14 @@ export default function AboutPage() {
           </h1>
 
           {/* Bio */}
-          <p style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "var(--foreground-muted)", maxWidth: 520, margin: "0 auto 1.25rem" }}>
-            David is a software engineer with a passion for building clean, functional products. Bestflow was created to solve the frustrating back-and-forth of scheduling — turning it into a seamless, modern experience that respects everyone&apos;s time.
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "var(--foreground-muted)", maxWidth: 560, margin: "0 auto 1.25rem" }}>
+            David is an aspiring software engineer and Information Technology student with a passion for building clean, functional, and user focused products. He enjoys turning ideas into real tools that people can actually use, focusing on simplicity, efficiency, and thoughtful design.
           </p>
-          <p style={{ fontSize: ".95rem", lineHeight: 1.75, color: "var(--foreground-faint)", maxWidth: 480, margin: "0 auto 3rem" }}>
-            Built with Next.js, Firebase, Kinde Auth, and TailwindCSS — every detail designed with intention.
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "var(--foreground-muted)", maxWidth: 560, margin: "0 auto 1.25rem" }}>
+            BestFlow was created to solve the frustrating back and forth of scheduling, transforming it into a seamless, modern experience that respects everyone&apos;s time. The goal is simple: remove unnecessary friction and make coordination feel effortless.
+          </p>
+          <p style={{ fontSize: ".95rem", lineHeight: 1.75, color: "var(--foreground-faint)", maxWidth: 520, margin: "0 auto 3rem" }}>
+            Driven by curiosity and a constant desire to improve, David is always learning, experimenting, and building solutions that make everyday interactions smoother and more intuitive.
           </p>
 
           {/* Tech stack pills */}
